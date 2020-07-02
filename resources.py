@@ -69,7 +69,7 @@ class White_List(Resource):
               "allowMultiple": False,
               "dataType": str,
               "paramType": "header"
-            }
+            },
             {
               "name": "password",
               "description": "Mật khẩu",
@@ -90,12 +90,11 @@ class White_List(Resource):
               "message": "‘error’: ‘Wrong Username Or Password’"
             }
           ]
-        )
-
-        @utilities.authenticate
-        # @marshal_with(packages)
-        def get(self):
-
+    )
+    @utilities.authenticate
+    #@marshal_with(packages)
+    def get(self):
+        white_list = {}
 class Template(Resource):
     @swagger.operation(
         notes='Lấy template dành cho SMS',
@@ -109,7 +108,7 @@ class Template(Resource):
               "allowMultiple": False,
               "dataType": str,
               "paramType": "header"
-            }
+            },
             {
               "name": "password",
               "description": "Mật khẩu",
@@ -128,7 +127,7 @@ class Template(Resource):
             {
               "code": 400,
               "message": "‘error’:’Mẫu Template không đúng định dạng hoặc chứa dấu tiếng việt’"
-            }
+            },
             {
               "code": 419,
               "message": "error’: ‘Wrong Username OR Password’"
@@ -137,8 +136,8 @@ class Template(Resource):
         )
 
     @utilities.authenticate
-        # @marshal_with(packages)
-        def get(self):
+    # @marshal_with(packages)
+    def get(self):
 
     @swagger.operation(
         notes='Tạo template dành cho SMS',
